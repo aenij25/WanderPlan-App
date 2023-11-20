@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
         System.out.println("isOpened: " + Boolean.toString(isOpened));
         System.out.println("isLogged: " + Boolean.toString(isLogged));
 
-        if(!isOpened && !isLogged) {
+//        if(!isOpened && !isLogged) {
 
             sharedPreferences
                     .edit()
@@ -46,13 +46,13 @@ public class WelcomeActivity extends AppCompatActivity {
 
                 v.getContext().startActivity(intent);
             });
-        } else {
-            if(isLogged) {
-                toMainPage();
-            } else {
-                toLoginPage(true);
-            }
-        }
+//        } else {
+//            if(isLogged) {
+//                toMainPage();
+//            } else {
+//                toLoginPage(true);
+//            }
+//        }
     }
 
     public void toLoginPage(boolean dontBack){

@@ -73,104 +73,112 @@ public class LoginActivity extends AppCompatActivity {
 
         llRootLoadingLogin = (LinearLayout) findViewById(R.id.ll_root_loading_login);
 
-        btnLogin.setOnClickListener(v -> {
-            etIdentifier.clearFocus();
-            etPassword.clearFocus();
-            InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+//        btnLogin.setOnClickListener(v -> {
+//            etIdentifier.clearFocus();
+//            etPassword.clearFocus();
+//            InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+//            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+//
+//            boolean isCompleted = true;
+//
+//            EditText[] required = {etIdentifier, etPassword};
+//            for (EditText et : required) {
+//                if (et.getText().toString().isEmpty()) {
+//                    et.setError("Must be filled");
+//                    isCompleted = false;
+//                } else {
+//                    et.setError(null);
+//                }
+//            }
+//
+//            if (isCompleted) {
+//                llRootLoadingLogin.setVisibility(View.VISIBLE);
+//
+//                String identifier = etIdentifier.getText().toString();
+//                String password = etPassword.getText().toString();
+//
+//
+//                RetrofitClient
+//                        .getInstance()
+//                        .create(AuthService.class)
+//                        .login(new LoginRequest(identifier, password))
+//                        .enqueue(new Callback<LoginResponse>() {
+//                            @Override
+//                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//                                int statusCode = response.code();
+//
+//                                if (response.isSuccessful()) {
+//                                    AccountResponse accountResponseJson = response.body().getAccount();
+//
+//                                    Account account = new Account(
+//                                            accountResponseJson.getId(),
+//                                            accountResponseJson.getName(),
+//                                            accountResponseJson.getUsername(),
+//                                            accountResponseJson.getImageUrl(),
+//                                            accountResponseJson.getEmail()
+//                                    );
+//
+//                                    AccountViewModel accountViewModel = ((GlobalModel) getApplication()).getAccountViewModel();
+//                                    accountViewModel.setAccount(account);
+//
+//                                    System.out.println("Account: " + accountViewModel.getAccount().getValue().toString());
+//
+//                                    llRootLoadingLogin.setVisibility(View.INVISIBLE);
+//
+//                                    ((GlobalModel) getApplication())
+//                                            .getSessionManager()
+//                                            .login(
+//                                                    thisActivity,
+//                                                    thisActivity,
+//                                                    response.body().getToken(),
+//                                                    account,
+//                                                    "Login Successed!"
+//                                            );
+//                                } else {
+//                                    llRootLoadingLogin.setVisibility(View.INVISIBLE);
+//                                    try {
+//                                        String errorBody = response.errorBody().string();
+//                                        Log.e("Status code: ", String.valueOf(statusCode));
+//                                        Log.e("Error Response Body", errorBody);
+//
+//                                        JSONObject errorJson = new JSONObject(errorBody);
+//                                        String errorMessage = errorJson.optString("message");
+//                                        String errorText = errorJson.optString("error");
+//
+//                                        switch (statusCode) {
+//                                            case 401:
+//                                                etPassword.setError(errorMessage);
+//                                            case 404:
+//                                                new CustomToast(errorMessage, v).show();
+//                                                etIdentifier.setError(errorMessage);
+//                                                break;
+//                                            case 500:
+//                                                new CustomToast(errorText, v).show();
+//                                        }
+//                                    } catch (IOException | JSONException e) {
+//                                        Log.e("error", e.toString());
+//                                        e.printStackTrace();
+//                                    }
+//                                }
+//                            }
+//
+//                            @Override
+//                            public void onFailure(Call<LoginResponse> call, Throwable t) {
+//                                System.out.println("LOGIN FAILURE: " + t.getMessage());
+//                                new CustomToast("Error Connection!", v).show();
+//                                llRootLoadingLogin.setVisibility(View.INVISIBLE);
+//                            }
+//                        });
+//            } else {
+//                new CustomToast("Please fill in the form!", v).show();
+//            }
+//        });
 
-            boolean isCompleted = true;
-
-            EditText[] required = {etIdentifier, etPassword};
-            for (EditText et : required) {
-                if (et.getText().toString().isEmpty()) {
-                    et.setError("Must be filled");
-                    isCompleted = false;
-                } else {
-                    et.setError(null);
-                }
-            }
-
-            if (isCompleted) {
-                llRootLoadingLogin.setVisibility(View.VISIBLE);
-
-                String identifier = etIdentifier.getText().toString();
-                String password = etPassword.getText().toString();
-
-
-                RetrofitClient
-                        .getInstance()
-                        .create(AuthService.class)
-                        .login(new LoginRequest(identifier, password))
-                        .enqueue(new Callback<LoginResponse>() {
-                            @Override
-                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                                int statusCode = response.code();
-
-                                if (response.isSuccessful()) {
-                                    AccountResponse accountResponseJson = response.body().getAccount();
-
-                                    Account account = new Account(
-                                            accountResponseJson.getId(),
-                                            accountResponseJson.getName(),
-                                            accountResponseJson.getUsername(),
-                                            accountResponseJson.getImageUrl(),
-                                            accountResponseJson.getEmail()
-                                    );
-
-                                    AccountViewModel accountViewModel = ((GlobalModel) getApplication()).getAccountViewModel();
-                                    accountViewModel.setAccount(account);
-
-                                    System.out.println("Account: " + accountViewModel.getAccount().getValue().toString());
-
-                                    llRootLoadingLogin.setVisibility(View.INVISIBLE);
-
-                                    ((GlobalModel) getApplication())
-                                            .getSessionManager()
-                                            .login(
-                                                    thisActivity,
-                                                    thisActivity,
-                                                    response.body().getToken(),
-                                                    account,
-                                                    "Login Successed!"
-                                            );
-                                } else {
-                                    llRootLoadingLogin.setVisibility(View.INVISIBLE);
-                                    try {
-                                        String errorBody = response.errorBody().string();
-                                        Log.e("Status code: ", String.valueOf(statusCode));
-                                        Log.e("Error Response Body", errorBody);
-
-                                        JSONObject errorJson = new JSONObject(errorBody);
-                                        String errorMessage = errorJson.optString("message");
-                                        String errorText = errorJson.optString("error");
-
-                                        switch (statusCode) {
-                                            case 401:
-                                                etPassword.setError(errorMessage);
-                                            case 404:
-                                                new CustomToast(errorMessage, v).show();
-                                                etIdentifier.setError(errorMessage);
-                                                break;
-                                            case 500:
-                                                new CustomToast(errorText, v).show();
-                                        }
-                                    } catch (IOException | JSONException e) {
-                                        Log.e("error", e.toString());
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                                System.out.println("LOGIN FAILURE: " + t.getMessage());
-                                new CustomToast("Error Connection!", v).show();
-                                llRootLoadingLogin.setVisibility(View.INVISIBLE);
-                            }
-                        });
-            } else {
-                new CustomToast("Please fill in the form!", v).show();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AfterLoginActivity.class);
+                startActivity(intent);
             }
         });
 
