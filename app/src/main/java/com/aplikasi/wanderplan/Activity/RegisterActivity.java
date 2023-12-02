@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 
 import com.aplikasi.wanderplan.API.Services.AuthService;
 import com.aplikasi.wanderplan.API.RetrofitClient;
-import com.aplikasi.wanderplan.Util.CustomToast;
 import com.aplikasi.wanderplan.Model.api.Register.RegisterRequest;
 import com.aplikasi.wanderplan.Model.api.Register.RegisterResponse;
 import com.aplikasi.wanderplan.R;
@@ -94,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                                     if(response.isSuccessful()){
                                         llRootLoadingRegister.setVisibility(View.INVISIBLE);
-                                        new CustomToast("Registrasi selesai, silahkan masuk", v).show();
                                         startActivity(intent);
                                         finish();
                                     } else {
@@ -108,7 +106,6 @@ public class RegisterActivity extends AppCompatActivity {
                                             JSONObject errorJson = new JSONObject(errorBody);
                                             String errorText = errorJson.optString("error");
 
-                                            new CustomToast("error: " + errorText, v).show();
 
                                         } catch (IOException | JSONException e) {
                                             llRootLoadingRegister.setVisibility(View.INVISIBLE);
@@ -121,7 +118,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onFailure(Call<RegisterResponse> call, Throwable t) {
                                     llRootLoadingRegister.setVisibility(View.INVISIBLE);
-                                    new CustomToast("Koneksi Error!", v).show();
                                 }
                             });
 
@@ -129,10 +125,8 @@ public class RegisterActivity extends AppCompatActivity {
                     String msg = "Password harus sama";
                     etPassword.setError(msg);
                     etPasswordRepeat.setError(msg);
-                    new CustomToast(msg, v).show();
                 }
             } else {
-                new CustomToast("Isi seluruh field!", v).show();
             }
         });
 

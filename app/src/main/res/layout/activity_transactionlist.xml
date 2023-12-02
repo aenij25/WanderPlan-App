@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.TransactionList">
+
+    <TextView
+        android:id="@+id/new_receipt_title"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Your Transaction"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="122dp" />
+
+    <LinearLayout
+        android:layout_width="407dp"
+        android:layout_height="111dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rectangle_184"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="81dp">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="149dp"
+            android:layout_height="91dp"
+            android:baselineAlignBottom="false"
+            android:src="@drawable/bali_homescreen"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="298dp"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/tv_ket"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="Candi Borobudur"
+                android:textAlignment="viewStart"
+                android:textColor="#222020"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="25 Des 2023 - 05 Jan 2024"
+                android:textAlignment="viewStart"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="Paid"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_back_new_receipt"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="8dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="409dp"
+        android:layout_height="129dp"
+        android:src="@drawable/menu_bar"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="626dp" />
+
+    <Button
+        android:id="@+id/notifbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/notification"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/activity"
+        android:backgroundTint="@color/active_tab_color"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/profile"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/discovery"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/dot"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="705dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

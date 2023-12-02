@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.BuyTicket">
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rectangle_184"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room Type :"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="408dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="408dp" />
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="140dp"
+        android:layout_height="39dp"
+        android:background="@drawable/rectangle_184"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="from"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date :"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText2"
+        android:layout_width="348dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rectangle_184"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number :"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email :"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText"
+        android:layout_width="348dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rectangle_184"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <Button
+        android:id="@+id/btn_selectRoom2"
+        style="@style/btn_accent_solid_rounded"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:text="Book Room"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="638dp" />
+
+    <TextView
+        android:id="@+id/new_receipt_title"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Please fill the form"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="122dp" />
+
+    <ImageButton
+        android:id="@+id/ib_back_new_receipt"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="8dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="348dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rectangle_184"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name :"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="140dp"
+        android:layout_height="39dp"
+        android:background="@drawable/rectangle_184"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="348dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rectangle_184"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="494dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Method :"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="86dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rectangle_184"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

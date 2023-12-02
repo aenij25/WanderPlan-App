@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.HomeDashboard"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <TextView
+        android:id="@+id/tv_welcome2"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Let's explore the world!"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/boxMenuButton"
+        android:layout_width="409dp"
+        android:layout_height="129dp"
+        android:src="@drawable/menu_bar"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="626dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/notifbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/notification"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="673dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/transbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/activity"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="673dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/profilbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/profile"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="673dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/mapsbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/discovery"
+        android:backgroundTint="@color/dark_grey"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="673dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/active_tab_color"
+        tools:layout_editor_absoluteX="190dp"
+        tools:layout_editor_absoluteY="673dp"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/dotActiveBtn"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/dot"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="707dp"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Hi Aeni"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/boxScroll1"
+        android:layout_width="411dp"
+        android:layout_height="182dp"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="119dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/category_spacing"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/bali_homescreen"
+                android:textAlignment="viewStart" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mountain" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tv_titleBox1"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="New Place"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/btn_seemore1"
+        style="@style/btn_transparent"
+        android:layout_width="74dp"
+        android:layout_height="30dp"
+        android:text="See more"
+        android:textAllCaps="false"
+        android:textColor="#3F51B5"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="88dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/icon1"
+        android:layout_width="24dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/arrow___right_2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="335dp"
+        tools:ignore="MissingConstraints"/>
+
+    <HorizontalScrollView
+        android:id="@+id/boxScroll2"
+        android:layout_width="410dp"
+        android:layout_height="264dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="332dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/category_spacing"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/resort1_homescreen"
+                android:textAlignment="viewStart" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/resort1_homescreen"
+                android:textAlignment="viewStart" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/resort1_homescreen"
+                android:textAlignment="viewStart" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tv_titleBox2"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="304dp"
+        android:text="Popular Hotel"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/btn_seemore2"
+        style="@style/btn_transparent"
+        android:layout_width="74dp"
+        android:layout_height="30dp"
+        android:text="See more"
+        android:textAllCaps="false"
+        android:textColor="#3F51B5"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="302dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/icon2"
+        android:layout_width="24dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="308dp"
+        android:background="@drawable/arrow___right_2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="336dp"
+        tools:ignore="MissingConstraints"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

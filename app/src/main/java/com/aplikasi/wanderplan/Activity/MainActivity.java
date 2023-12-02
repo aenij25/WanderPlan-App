@@ -4,16 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
 import com.aplikasi.wanderplan.Model.ViewModel.AccountViewModel;
 import com.aplikasi.wanderplan.Model.GlobalModel;
 import com.aplikasi.wanderplan.Model.data.Account.Account;
 import com.aplikasi.wanderplan.R;
-import com.aplikasi.wanderplan.Util.CustomToast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,13 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String toastMsg = intent.getStringExtra("TOAST_MSG");
-        if(toastMsg != null){
-            if(!toastMsg.isEmpty())
-                new CustomToast(
-                        toastMsg,
-                        LayoutInflater.from(this).inflate(R.layout.fragment_home, null)
-                ).show();
-        }
 
         Account account = new Account(
                 sharedPreferences.getString("account_id", "undefined"),
@@ -83,14 +72,6 @@ public class MainActivity extends AppCompatActivity {
             public void onGlobalLayout() {
                 // This method will be called once the layout has been populated, and you can obtain its height.
                 int height = navView.getHeight();
-
-                // give empty space at the end of recycler view of receipt list so last
-                // item wont be covered by bottom navigation bar
-                View vw = (View) findViewById(R.id.vw_empty_space);
-                ViewGroup.LayoutParams param = vw.getLayoutParams();
-                param.height = height;
-
-                vw.setLayoutParams(param);
 
                 // Remove the listener to avoid multiple calls
                 navView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
