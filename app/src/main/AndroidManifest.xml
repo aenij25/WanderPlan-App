@@ -33,6 +33,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity.AfterLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.HomeDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DetailWisata"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DetailHotel"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BuyTicket"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BookRoom"
+            android:exported="false" />
 <!--        <activity-->
 <!--            android:name=".Activity.DetailActivity"-->
 <!--            android:exported="false" />-->

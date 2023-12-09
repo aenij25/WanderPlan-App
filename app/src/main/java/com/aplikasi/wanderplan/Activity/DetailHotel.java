@@ -1,26 +1,26 @@
 package com.aplikasi.wanderplan.Activity;
 
 import android.app.Activity;
-import android.os.Bundle;
-import android.widget.Button;
-import android.view.View;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.aplikasi.wanderplan.R;
 
-public class DetailWisata extends Activity {
-    Button btnBuy;
+public class DetailHotel extends Activity {
+    Button btnBook;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailwisata);
+        setContentView(R.layout.activity_detailhotel);
+        btnBook = (Button) findViewById(R.id.btn_selectRoom);
 
-        btnBuy = (Button) findViewById(R.id.btn_buyTicket);
-
-        btnBuy.setOnClickListener(new View.OnClickListener() {
+        btnBook.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), BuyTicket.class);
+                Intent intent = new Intent(v.getContext(), BookRoom.class);
                 v.getContext().startActivity(intent);
             }
         });

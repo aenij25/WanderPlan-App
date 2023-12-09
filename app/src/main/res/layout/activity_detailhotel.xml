@@ -4,141 +4,178 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingConstraints"
-    tools:context=".Activity.DetailHome">
+    tools:context=".Activity.DetailHotel">
 
     <Button
         android:id="@+id/btn_selectRoom"
         style="@style/btn_accent_solid_rounded"
         android:layout_width="360dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
         android:text="Select a room"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="658dp"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="420dp"
-        android:layout_height="430dp"
+        android:layout_width="428dp"
+        android:layout_height="440dp"
         android:src="@drawable/detailhotel1"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="-81dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
         android:padding="8dp"
         android:src="@drawable/baseline_arrow_back_24"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="34dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="380dp"
         android:layout_height="236dp"
         android:src="@drawable/rectangledetail"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="247dp" />
-
-    <TextView
-        android:id="@+id/tv_negara"
-        style="@style/MainFragmentTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:text="Indonesia"
-        android:textColor="@color/font_default"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
-
-    <TextView
-        android:id="@+id/tv_kota"
-        style="@style/MainFragmentTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:text="Atlantis City"
-        android:textColor="@color/font_default"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
-
-    <TextView
-        android:id="@+id/tv_rating"
-        style="@style/MainFragmentTitle"
-        android:layout_width="44dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="408dp"
-        android:text="4.9"
-        android:textColor="#3F51B5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="97dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView1" />
 
     <TextView
         android:id="@+id/textView1"
         style="@style/MainFragmentTitle"
         android:layout_width="85dp"
         android:layout_height="30dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginStart="4dp"
         android:text="/ night"
         android:textColor="@color/font_default"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_harga"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="183dp" />
+        app:layout_constraintVertical_bias="0.52" />
 
-    <ImageView
-        android:id="@+id/iconStar"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:src="@drawable/ic_star_solid_yellow"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="408dp" />
+    <TextView
+        android:id="@+id/tv_negara"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Indonesia"
+        android:textColor="@color/font_default"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_kota"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
 
     <TextView
         android:id="@+id/tv_harga"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
         android:text="799.000 IDR"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_negara"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.519" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        style="@style/MainFragmentTitle"
+        android:layout_width="44dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="4dp"
+        android:text="4.9"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
+
+    <ImageView
+        android:id="@+id/iconStar"
+        android:layout_width="36dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="36dp"
+        android:src="@drawable/ic_star_solid_yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/tv_kota"
+        style="@style/MainFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Atlantis City"
+        android:textColor="@color/font_default"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_namaHotel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442" />
 
     <TextView
         android:id="@+id/tv_namaHotel"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
         android:text="Neptune Resort"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.406" />
 
     <Button
         android:id="@+id/btnDetail"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:text="Detail"
         android:textColor="#3F51B5"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <Button
         android:id="@+id/btnOverview"
@@ -148,8 +185,12 @@
         android:text="Overview"
         android:textColor="@color/font_default"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <Button
         android:id="@+id/btnReview"
@@ -159,24 +200,34 @@
         android:text="Review"
         android:textColor="@color/font_default"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnOverview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <ImageView
         android:id="@+id/widgetUnderline"
         android:layout_width="51dp"
         android:layout_height="3dp"
         android:src="@drawable/underlinebtn"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="504dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnDetail"
+        app:layout_constraintEnd_toEndOf="@+id/btnDetail"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/btnDetail"
+        app:layout_constraintTop_toTopOf="@+id/btnDetail"
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="297dp"
         android:layout_height="101dp"
+        android:layout_marginBottom="28dp"
         android:text="Neptune Resort is the most luxurious luxury hotel segment of Capi, located in big...  "
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="534dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_selectRoom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

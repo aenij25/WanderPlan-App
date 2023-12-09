@@ -8,22 +8,30 @@
     tools:context=".Activity.DetailWisata">
 
     <Button
-        android:id="@+id/btn_selectRoom"
+        android:id="@+id/btn_buyTicket"
         style="@style/btn_accent_solid_rounded"
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:text="Buy ticket"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="420dp"
-        android:layout_height="430dp"
+        android:layout_width="413dp"
+        android:layout_height="439dp"
         android:src="@drawable/detailhotel1"
-        app:srcCompat="@drawable/detailwisata1"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="-81dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/detailwisata1" />
 
     <ImageButton
         android:id="@+id/btnBack"
@@ -34,100 +42,130 @@
         android:foreground="?attr/selectableItemBackground"
         android:padding="8dp"
         android:src="@drawable/baseline_arrow_back_24"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="34dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="380dp"
         android:layout_height="236dp"
         android:src="@drawable/rectangledetail"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="247dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView1"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
         android:id="@+id/tv_negara"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
         android:text="Indonesia"
         android:textColor="@color/font_default"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <TextView
         android:id="@+id/tv_kota"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
         android:text="Magelang, Jawa Tengah"
         android:textColor="@color/font_default"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.434" />
 
     <TextView
         android:id="@+id/tv_rating"
         style="@style/MainFragmentTitle"
         android:layout_width="44dp"
         android:layout_height="31dp"
-        android:layout_marginTop="408dp"
         android:text="4.9"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="97dp" />
+        app:layout_constraintVertical_bias="0.587" />
 
     <TextView
         android:id="@+id/textView1"
         style="@style/MainFragmentTitle"
         android:layout_width="85dp"
         android:layout_height="30dp"
-        android:layout_marginTop="364dp"
         android:text="/ person"
         android:textColor="@color/font_default"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="183dp" />
+        app:layout_constraintVertical_bias="0.519" />
 
     <ImageView
         android:id="@+id/iconStar"
         android:layout_width="36dp"
         android:layout_height="34dp"
         android:src="@drawable/ic_star_solid_yellow"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="408dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585" />
 
     <TextView
         android:id="@+id/tv_harga"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
         android:text="50.000 IDR"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.52" />
 
     <TextView
         android:id="@+id/tv_namaHotel"
         style="@style/MainFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
         android:text="Candi Borobudur"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="61dp" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <Button
         android:id="@+id/btnDetail"
@@ -137,8 +175,12 @@
         android:text="Detail"
         android:textColor="#3F51B5"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView1"
+        app:layout_constraintVertical_bias="0.688" />
 
     <Button
         android:id="@+id/btnOverview"
@@ -148,8 +190,12 @@
         android:text="Overview"
         android:textColor="@color/font_default"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <Button
         android:id="@+id/btnReview"
@@ -159,16 +205,24 @@
         android:text="Review"
         android:textColor="@color/font_default"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <ImageView
         android:id="@+id/widgetUnderline"
         android:layout_width="51dp"
         android:layout_height="3dp"
         android:src="@drawable/underlinebtn"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="504dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 
     <TextView
         android:id="@+id/tv_desc"
@@ -176,7 +230,11 @@
         android:layout_height="125dp"
         android:text="Candi Borobudur (Jawa: ꦕꦟ꧀ꦝꦶꦧꦫꦧꦸꦝꦸꦂ, translit. Candhi Båråbudhur) adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia..."
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="519dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView1"
+        app:layout_constraintVertical_bias="0.869" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
