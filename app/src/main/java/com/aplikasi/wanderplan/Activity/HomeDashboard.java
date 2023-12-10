@@ -1,39 +1,67 @@
 package com.aplikasi.wanderplan.Activity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.aplikasi.wanderplan.R;
 
-    public class HomeDashboard extends Activity {
+import java.util.ArrayList;
+import java.util.List;
 
-        ImageView imgWisata1, imgHotel1;
+public class HomeDashboard extends AppCompatActivity {
+
+        RecyclerView WisataRecycler, HotelRecycler;
+
+        NewPlacesAdapter wisataAdapter;
+
+        HotelAdapter hotelAdapter;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
 
-            imgWisata1 = (ImageView) findViewById(R.id.imageView1);
-            imgHotel1 = (ImageView) findViewById(R.id.imageView3);
+            //dummy data
 
-            imgWisata1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), DetailWisata.class);
-                    v.getContext().startActivity(intent);
-                }
-            });
+            List<WisataData> wisataDataList = new ArrayList<>();
+            wisataDataList.add(new WisataData(R.drawable.bali_homescreen));
+            wisataDataList.add(new WisataData(R.drawable.mountain));
+            wisataDataList.add(new WisataData(R.drawable.bali_homescreen));
+            wisataDataList.add(new WisataData(R.drawable.mountain));
+            wisataDataList.add(new WisataData(R.drawable.bali_homescreen));
+            wisataDataList.add(new WisataData(R.drawable.mountain));
 
-            imgHotel1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), DetailHotel.class);
-                    v.getContext().startActivity(intent);
-                }
-            });
+            setWisataRecycler(wisataDataList);
+
+            List<HotelData> hotelDataList = new ArrayList<>();
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+
+            setHotelRecycler(hotelDataList);
+
         }
-}
+
+        private void setWisataRecycler(List<WisataData> wisataDataList) {
+            WisataRecycler = findViewById(R.id.recent_recycler);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+            WisataRecycler.setLayoutManager(layoutManager);
+            wisataAdapter = new NewPlacesAdapter(this, wisataDataList);
+            WisataRecycler.setAdapter(wisataAdapter);
+
+        }
+
+        private void setHotelRecycler(List<HotelData> hotelDataList) {
+            HotelRecycler = findViewById(R.id.top_places_recycler);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+            HotelRecycler.setLayoutManager(layoutManager);
+            hotelAdapter = new HotelAdapter(this, hotelDataList);
+            HotelRecycler.setAdapter(hotelAdapter);
+        }
+
+    }
