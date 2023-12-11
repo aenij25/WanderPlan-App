@@ -169,7 +169,7 @@
         app:layout_constraintVertical_bias="0.034" />
 
     <ImageButton
-        android:id="@+id/ib_back_new_receipt"
+        android:id="@+id/btnBack"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:background="@android:color/transparent"

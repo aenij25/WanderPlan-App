@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class BookRoom extends AppCompatActivity {
     Spinner spRoom, spPayment;
 
     Button btConfirm;
+    ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class BookRoom extends AppCompatActivity {
         spRoom = (Spinner) findViewById(R.id.spinner2);
         spPayment = (Spinner) findViewById(R.id.spinner);
         btConfirm = (Button) findViewById(R.id.btn_selectRoom2);
+        btnBack = (ImageButton) findViewById(R.id.btnBack);
 
         btConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,5 +112,25 @@ public class BookRoom extends AppCompatActivity {
 //                v.getContext().startActivity(intent);
 //            }
 //        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                goBackToPreviousActivity();
+            }
+        });
+    }
+    private void goBackToPreviousActivity() {
+        // Create an Intent to navigate back to the PreviousActivity
+        Intent intent = new Intent(this, DetailHotel.class);
+
+        // If you want to pass data back to the previous activity, you can use putExtra here
+        // intent.putExtra("key", "value");
+
+        // Start the PreviousActivity
+        startActivity(intent);
+
+        // Finish the current activity (CurrentActivity)
+        finish();
     }
 }
