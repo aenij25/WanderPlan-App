@@ -198,6 +198,7 @@
 
     <Spinner
         android:id="@+id/spinner"
+        android:entries="@array/payment"
         android:layout_width="348dp"
         android:layout_height="45dp"
         android:background="@drawable/rectangle_184"
