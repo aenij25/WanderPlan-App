@@ -6,7 +6,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
     private static Retrofit retro = null;
 
-//    private static final String BASE_URL = "https://api-gorengan-indonesia.vercel.app";
     private static final String BASE_URL = "https://api-wanderplan.vercel.app";
 
     private RetrofitClient() {
