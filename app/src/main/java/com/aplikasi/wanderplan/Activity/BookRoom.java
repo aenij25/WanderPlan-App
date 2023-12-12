@@ -97,6 +97,15 @@ public class BookRoom extends AppCompatActivity {
                 hotelForm1.setPayment(payment);
 
                 Toast.makeText(getApplicationContext(), "Proses sedang berjalan", Toast.LENGTH_SHORT).show();
+
+                if( nama != null && email != null &&
+                    noHp != null && date != null &&
+                    date2 != null && Qty != null &&
+                    room != null ){
+                    //Go to Payment Layout
+                    Intent intent = new Intent(v.getContext(), Payment.class);
+                    v.getContext().startActivity(intent);
+                }
             }
         });
 
@@ -122,10 +131,10 @@ public class BookRoom extends AppCompatActivity {
         // Finish the current activity (CurrentActivity)
         finish();
     }
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), Payment.class);
-        v.getContext().startActivity(intent);
-    }
+//    @Override
+//    public void onClick(View v) {
+//        Intent intent = new Intent(v.getContext(), Payment.class);
+//        v.getContext().startActivity(intent);
+//    }
 
 }

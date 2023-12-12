@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.PaymentVA">
+    tools:context=".Activity.Payment">
 
     <TextView
         android:id="@+id/textView24"
@@ -21,8 +21,8 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Barcode"
         android:layout_marginTop="110dp"
+        android:text="Barcode"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -37,11 +37,11 @@
         android:id="@+id/imageView4"
         android:layout_width="228dp"
         android:layout_height="276dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_selectRoom2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24"
-        app:srcCompat="@drawable/barcode1" />
+        app:srcCompat="@drawable/barcode1"
+        tools:layout_editor_absoluteY="270dp" />
 
     <Button
         android:id="@+id/btn_selectRoom2"

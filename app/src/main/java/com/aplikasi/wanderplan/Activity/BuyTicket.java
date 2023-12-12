@@ -93,6 +93,13 @@ public class BuyTicket extends AppCompatActivity {
                 wisataForm1.setQuantity(quantity);
                 wisataForm1.setPayment(Payment);
 
+                if( Nama != null && Email != null &&
+                    Phone != null && From != null &&
+                    To != null && quantity != null ){
+                    //Go to Payment Layout
+                    Intent intent = new Intent(v.getContext(), Payment.class);
+                    v.getContext().startActivity(intent);
+                }
             }
         });
 
