@@ -1,6 +1,5 @@
 package com.aplikasi.wanderplan.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -101,17 +100,6 @@ public class BookRoom extends AppCompatActivity {
             }
         });
 
-
-//        btnNext = (Button) findViewById(R.id.btn_next);
-//
-//        btnNext.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(v.getContext(), HomeDashboard.class);
-//                v.getContext().startActivity(intent);
-//            }
-//        });
         btnBack.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -119,6 +107,7 @@ public class BookRoom extends AppCompatActivity {
                 goBackToPreviousActivity();
             }
         });
+
     }
     private void goBackToPreviousActivity() {
         // Create an Intent to navigate back to the PreviousActivity
@@ -133,4 +122,10 @@ public class BookRoom extends AppCompatActivity {
         // Finish the current activity (CurrentActivity)
         finish();
     }
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(v.getContext(), Payment.class);
+        v.getContext().startActivity(intent);
+    }
+
 }
