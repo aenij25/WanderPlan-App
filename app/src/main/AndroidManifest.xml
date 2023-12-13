@@ -17,13 +17,13 @@
         tools:targetApi="31">
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Activity.RegisterActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Activity.WelcomeActivity"
             android:exported="true">
@@ -51,7 +51,13 @@
         <activity
             android:name=".Activity.BookRoom"
             android:exported="false" />
-<!--        <activity-->
+        <activity
+            android:name=".Activity.Payment"
+            android:exported="false" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <!--        <activity-->
 <!--            android:name=".Activity.DetailActivity"-->
 <!--            android:exported="false" />-->
     </application>

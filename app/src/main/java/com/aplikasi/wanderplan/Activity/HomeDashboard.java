@@ -1,39 +1,76 @@
 package com.aplikasi.wanderplan.Activity;
 
-import android.app.Activity;
-import android.content.Intent;
+import static com.aplikasi.wanderplan.R.id.top_places_recycler;
+
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.aplikasi.wanderplan.R;
 
-    public class HomeDashboard extends Activity {
+import java.util.ArrayList;
+import java.util.List;
 
-        ImageView imgWisata1, imgHotel1;
+public class HomeDashboard extends AppCompatActivity {
+
+        RecyclerView WisataRecycler, HotelRecycler;
+
+        NewPlacesAdapter wisataAdapter;
+
+        HotelAdapter hotelAdapter;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
 
-            imgWisata1 = (ImageView) findViewById(R.id.imageView1);
-            imgHotel1 = (ImageView) findViewById(R.id.imageView3);
+            //dummy data
 
-            imgWisata1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), DetailWisata.class);
-                    v.getContext().startActivity(intent);
-                }
-            });
+            List<WisataData> wisataDataList = new ArrayList<>();
+            wisataDataList.add(new WisataData(R.drawable.bali_homescreen));
+            wisataDataList.add(new WisataData(R.drawable.mountain));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_komodo_island_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_raja_ampat_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_gili_trawangan_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_lombok_mandalika_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_bukit_marinding_waingapu_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_bunaken_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_taman_nasional_bromo_semeru_1));
+            wisataDataList.add(new WisataData(R.drawable.imgwisata_danau_toba_1));
 
-            imgHotel1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), DetailHotel.class);
-                    v.getContext().startActivity(intent);
-                }
-            });
+
+            setWisataRecycler(wisataDataList);
+
+            List<HotelData> hotelDataList = new ArrayList<>();
+            hotelDataList.add(new HotelData(R.drawable.detailhotel1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_adiwana_bisma_1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_g_h_universal_1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_hotel_tentrem_semarang_1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_padma_resort_ubud_1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_the_kayon_jungle_resort_1));
+            hotelDataList.add(new HotelData(R.drawable.imghotel_the_seminyak_beach_resort_1));
+
+            setHotelRecycler(hotelDataList);
+
         }
-}
+
+        private void setWisataRecycler(List<WisataData> wisataDataList) {
+            WisataRecycler = findViewById(R.id.recent_recycler);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+            WisataRecycler.setLayoutManager(layoutManager);
+            wisataAdapter = new NewPlacesAdapter(this, wisataDataList);
+            WisataRecycler.setAdapter(wisataAdapter);
+
+        }
+
+        private void setHotelRecycler(List<HotelData> hotelDataList) {
+            HotelRecycler = findViewById(top_places_recycler);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+            HotelRecycler.setLayoutManager(layoutManager);
+            hotelAdapter = new HotelAdapter(this, hotelDataList);
+            HotelRecycler.setAdapter(hotelAdapter);
+        }
+
+    }
