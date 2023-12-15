@@ -20,10 +20,10 @@ An Application for planning your journey (book accomodation & tourism spot). Thi
     - [x] Books Accomodation & Tourism Spot
     - [x] History of Transaction
 3. Implement Backend in Android Studio :
-    - [ ] Login & Sign In 
-    - [ ] Home
-    - [ ] List of Tourism Spot & Accomodation
-    - [ ] Detail of Tourism Spot & Accomodation
+    - [x] Login & Sign In 
+    - [x] Home
+    - [x] List of Tourism Spot & Accomodation
+    - [x] Detail of Tourism Spot & Accomodation
     - [ ] Books Accomodation & Tourism Spot
     - [ ] History of Transaction
 4. Implement API in Android Studio
