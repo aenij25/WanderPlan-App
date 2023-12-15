@@ -72,12 +72,13 @@
         android:id="@+id/editText2"
         android:layout_width="348dp"
         android:layout_height="45dp"
-        android:layout_marginTop="272dp"
         android:background="@drawable/rectangle_184"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
 
     <TextView
         android:id="@+id/textView14"
@@ -143,7 +144,7 @@
         app:layout_constraintVertical_bias="0.031" />
 
     <ImageButton
-        android:id="@+id/ib_back_new_receipt"
+        android:id="@+id/btnBack"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:background="@android:color/transparent"
@@ -198,6 +199,7 @@
 
     <Spinner
         android:id="@+id/spinner"
+        android:entries="@array/payment"
         android:layout_width="348dp"
         android:layout_height="45dp"
         android:background="@drawable/rectangle_184"

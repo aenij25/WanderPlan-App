@@ -1,26 +1,34 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">Wander Plan</string>
     <string name="shared_preference">wanderplan</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget nisl nec elit feugiat tincidunt. Sed nec bibendum ante. Curabitur at augue vel est vehicula euismod. Vestibulum sed ipsum non ex fringilla interdum. Aenean ac scelerisque odio. Nam euismod aliquet volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin justo libero, posuere nec nisi ut, tincidunt laoreet quam. Aenean varius, orci eu congue iaculis, erat nunc tempus odio, nec condimentum justo justo sit amet erat. Sed in justo nec augue tincidunt consectetur. Sed venenatis metus eu tortor consectetur, sit amet tristique metus laoreet. Nunc pellentesque nulla ut sem consectetur vulputate. In hac habitasse platea dictumst. Nunc a varius sem. Aenean quis erat eu ex mattis scelerisque vel et risus. Integer bibendum facilisis arcu eu tincidunt. Sed in elit nec felis bibendum laoreet. Nullam in odio nec justo euismod volutpat.
 </string>
     <string name="lorem_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget nisl nec elit feugiat tincidunt. Sed nec bibendum ante.\n\nCurabitur at augue vel est vehicula euismod.</string>
     <string name="welcome_banner">Welcome to WanderPlan!</string>
+    <string name="room_type">Wander Plan</string>
+    <array name="room">
+        <item>Standard Room</item>
+        <item>Superior Room</item>
+        <item>Deluxe Room</item>
+        <item>Junior Suite Room</item>
+        <item>Presidential Suite</item>
+        <item>Suite Room</item>
+        <item>Single Room</item>
+        <item>Twin Room</item>
+    </array>
+    <string name="payment_method">Wander Plan</string>
+    <array name="payment">
+        <item>BCA VIRTUAL ACCOUNT</item>
+        <item>MANDIRI VIRTUAL ACCOUNT</item>
+        <item>SHOPEEPAY</item>
+        <item>GOPAY</item>
+        <item>OVO</item>
+        <item>BNI VIRTUAL ACCOUNT</item>
+        <item>BRI VIRTUAL ACCOUNT</item>
+    </array>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <array name="categories">
-        <item>Aci</item>
-        <item>Kedelai</item>
-        <item>Buah</item>
-        <item>Kentang</item>
-        <item>Ikan</item>
-        <item>Isian Sayur</item>
-        <item>Manis</item>
-    </array>
-    <array name="difficulties">
-        <item>Mudah</item>
-        <item>Sedang</item>
-        <item>Sukar</item>
-    </array>
+
 </resources>

@@ -51,6 +51,27 @@ public class DetailHotel extends Activity {
                 v.getContext().startActivity(intent);
             }
         });
+
+//        btnBack.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                goBackToPreviousActivity();
+//            }
+//        });
+    }
+    private void goBackToPreviousActivity() {
+        // Create an Intent to navigate back to the PreviousActivity
+        Intent intent = new Intent(this, HomeDashboard.class);
+
+        // If you want to pass data back to the previous activity, you can use putExtra here
+        // intent.putExtra("key", "value");
+
+        // Start the PreviousActivity
+        startActivity(intent);
+
+        // Finish the current activity (CurrentActivity)
+        finish();
     }
 
     private void updateUI(long tourId,String tourName,String tourImage,String tourLocation,int tourPrice,long tourRate,String tourDescription) {
