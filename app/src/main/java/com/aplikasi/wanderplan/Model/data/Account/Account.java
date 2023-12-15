@@ -9,14 +9,12 @@ public class Account implements Parcelable {
     private String id;
     private String name;
     private String username;
-    private String imageUrl;
     private String email;
 
-    public Account(String id, String name, String username, String imageUrl, String email) {
+    public Account(String id, String name, String username, String email) {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.imageUrl = imageUrl;
         this.email = email;
     }
 
@@ -24,7 +22,6 @@ public class Account implements Parcelable {
         id = in.readString();
         name = in.readString();
         username = in.readString();
-        imageUrl = in.readString();
         email = in.readString();
     }
 
@@ -64,14 +61,6 @@ public class Account implements Parcelable {
         this.username = username;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -90,7 +79,6 @@ public class Account implements Parcelable {
         parcel.writeString(id);
         parcel.writeString(name);
         parcel.writeString(username);
-        parcel.writeString(imageUrl);
         parcel.writeString(email);
     }
 
@@ -101,7 +89,6 @@ public class Account implements Parcelable {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }

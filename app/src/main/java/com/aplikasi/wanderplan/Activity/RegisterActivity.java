@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.MonthDisplayHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,8 +13,8 @@ import android.widget.LinearLayout;
 
 import com.aplikasi.wanderplan.API.Services.AuthService;
 import com.aplikasi.wanderplan.API.RetrofitClient;
+import com.aplikasi.wanderplan.Model.api.MessageModel;
 import com.aplikasi.wanderplan.Model.api.Register.RegisterRequest;
-import com.aplikasi.wanderplan.Model.api.Register.RegisterResponse;
 import com.aplikasi.wanderplan.R;
 
 import org.json.JSONException;
@@ -88,9 +89,9 @@ public class RegisterActivity extends AppCompatActivity {
                             .getInstance()
                             .create(AuthService.class)
                             .register(new RegisterRequest(username, email, name, password))
-                            .enqueue(new Callback<RegisterResponse>() {
+                            .enqueue(new Callback<MessageModel>() {
                                 @Override
-                                public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                                public void onResponse(Call<MessageModel> call, Response<MessageModel> response) {
                                     if(response.isSuccessful()){
                                         llRootLoadingRegister.setVisibility(View.INVISIBLE);
                                         startActivity(intent);
@@ -116,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
 
                                 @Override
-                                public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                                public void onFailure(Call<MessageModel> call, Throwable t) {
                                     llRootLoadingRegister.setVisibility(View.INVISIBLE);
                                 }
                             });

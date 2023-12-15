@@ -117,7 +117,7 @@
                 style="@style/btn_transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:textAllCaps="false"
                 android:textColor="#3F51B5" />
         </LinearLayout>

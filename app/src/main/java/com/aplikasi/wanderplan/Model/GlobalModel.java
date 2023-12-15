@@ -18,7 +18,7 @@ public class GlobalModel extends Application {
         super.onCreate();
 
         accountViewModel = new ViewModelProvider.AndroidViewModelFactory(this).create(AccountViewModel.class);
-        sessionManager = new SessionManager(getSharedPreferences("gorenganindonesia", Context.MODE_PRIVATE));
+        sessionManager = new SessionManager(getSharedPreferences("wanderplan", Context.MODE_PRIVATE));
     }
 
     public AccountViewModel getAccountViewModel() {

@@ -19,17 +19,19 @@ import com.aplikasi.wanderplan.API.RetrofitClient;
 import com.aplikasi.wanderplan.API.Services.AuthService;
 import com.aplikasi.wanderplan.Model.GlobalModel;
 import com.aplikasi.wanderplan.Model.ViewModel.AccountViewModel;
-import com.aplikasi.wanderplan.Model.api.AccountResponse;
 import com.aplikasi.wanderplan.Model.api.Login.LoginRequest;
-import com.aplikasi.wanderplan.Model.api.Login.LoginResponse;
+import com.aplikasi.wanderplan.Model.api.MessageModel;
 import com.aplikasi.wanderplan.Model.data.Account.Account;
 import com.aplikasi.wanderplan.R;
 import com.aplikasi.wanderplan.Util.CustomToast;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         thisActivity = this;
-
+        ObjectMapper om = new ObjectMapper();
         Intent intent = getIntent();
         String toastMsg = intent.getStringExtra("TOAST_MSG");
         if(toastMsg != null){
@@ -94,20 +96,20 @@ public class LoginActivity extends AppCompatActivity {
                         .getInstance()
                         .create(AuthService.class)
                         .login(new LoginRequest(identifier, password))
-                        .enqueue(new Callback<LoginResponse>() {
+                        .enqueue(new Callback<MessageModel>() {
                             @Override
-                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            public void onResponse(Call<MessageModel> call, Response<MessageModel> response) {
                                 int statusCode = response.code();
 
                                 if (response.isSuccessful()) {
-                                    AccountResponse accountResponseJson = response.body().getAccount();
-
+                                    assert response.body() != null;
+                                    JsonNode accountResponseJson = om.convertValue(response.body().getData(),JsonNode.class);
+                                    System.out.println(accountResponseJson);
                                     Account account = new Account(
-                                            accountResponseJson.getId(),
-                                            accountResponseJson.getName(),
-                                            accountResponseJson.getUsername(),
-                                            accountResponseJson.getImageUrl(),
-                                            accountResponseJson.getEmail()
+                                            accountResponseJson.get("id").toString(),
+                                            accountResponseJson.get("name").toString(),
+                                            accountResponseJson.get("username").toString(),
+                                            accountResponseJson.get("email").toString()
                                     );
 
                                     AccountViewModel accountViewModel = ((GlobalModel) getApplication()).getAccountViewModel();
@@ -121,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
                                             .login(
                                                     thisActivity,
                                                     thisActivity,
-                                                    response.body().getToken(),
+                                                    Base64.getEncoder().encodeToString(accountResponseJson.get("email").toString().getBytes()),
                                                     account,
                                                     "login sukses!"
                                             );
@@ -153,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            public void onFailure(Call<MessageModel> call, Throwable t) {
                                 System.out.println("LOGIN FAILURE: " + t.getMessage());
                                 new CustomToast("Koneksi Error!", v).show();
                             }
@@ -162,19 +164,6 @@ public class LoginActivity extends AppCompatActivity {
                 new CustomToast("Isi seluruh field!", v).show();
             }
         });
-
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//
-////
-////                Intent intent = new Intent(v.getContext(), AfterLoginActivity.class);
-////                v.getContext().startActivity(intent);
-//            }
-//
-//
-//        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

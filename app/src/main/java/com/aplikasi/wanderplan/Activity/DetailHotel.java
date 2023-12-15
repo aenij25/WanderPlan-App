@@ -5,16 +5,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.aplikasi.wanderplan.R;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class DetailHotel extends Activity {
     Button btnBook;
+    ImageView imageView;
+    TextView tvTourName,tvTourDesc,tvTourPrice,tvTourLocation,tvTourRating;
+    ObjectMapper om = new ObjectMapper();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailhotel);
-        btnBook = (Button) findViewById(R.id.btn_selectRoom);
+
+        btnBook = findViewById(R.id.btn_selectRoom);
+        imageView = findViewById(R.id.imageView1);
+        tvTourName = findViewById(R.id.tv_namaHotel);
+        tvTourDesc = findViewById(R.id.tv_desc);
+        tvTourPrice = findViewById(R.id.tv_harga);
+        tvTourLocation = findViewById(R.id.tv_kota);
+        tvTourRating = findViewById(R.id.tv_rating);
+
+        Intent intent = getIntent();
+        long tourId = intent.getLongExtra("tour_id",0);
+        String tourName = intent.getStringExtra("tour_name");
+        String tourImage = intent.getStringExtra("image");
+        String tourLocation = Objects.requireNonNull(intent.getStringExtra("location")).replace(", Indonesia","");
+        int tourPrice = intent.getIntExtra("price",0);
+        long tourRate = intent.getLongExtra("rate",0);
+        String tourDescription = intent.getStringExtra("description");
+
+        updateUI(tourId, tourName, tourImage,tourLocation,tourPrice,tourRate,tourDescription);
 
         btnBook.setOnClickListener(new View.OnClickListener() {
 
@@ -24,5 +51,21 @@ public class DetailHotel extends Activity {
                 v.getContext().startActivity(intent);
             }
         });
+    }
+
+    private void updateUI(long tourId,String tourName,String tourImage,String tourLocation,int tourPrice,long tourRate,String tourDescription) {
+        // Load image using Picasso or Glide
+        int resourceId = getResources().getIdentifier(tourImage, "drawable", getPackageName());
+        if (resourceId != 0) {
+            Picasso.get().load(resourceId).into(imageView);
+        }
+
+        // Update other UI elements
+        tvTourName.setText(tourName);
+        tvTourDesc.setText(tourDescription);
+        tvTourPrice.setText((String.valueOf(tourPrice) + "IDR"));
+        tvTourLocation.setText(tourLocation);
+        tvTourRating.setText(String.valueOf(tourRate));
+        // Update other UI elements as needed
     }
 }

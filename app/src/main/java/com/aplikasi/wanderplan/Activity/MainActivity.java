@@ -18,6 +18,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import java.io.File;
+import java.util.Map;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     AccountViewModel accountViewModel;
@@ -29,14 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         accountViewModel = ((GlobalModel) getApplication()).getAccountViewModel();
-//        recipeViewModel = ((GlobalModel) getApplication()).getRecipeViewModel();
-
-
         sharedPreferences = getSharedPreferences("wanderplan", Context.MODE_PRIVATE);
 
-        boolean isLogged = sharedPreferences.getBoolean("isLogged", false);
-
-        if(!isLogged){
+        Map session = sharedPreferences.getAll();
+        if(!Boolean.parseBoolean(Objects.requireNonNull(session.get("isLogged")).toString())){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             this.finish();
@@ -47,11 +45,10 @@ public class MainActivity extends AppCompatActivity {
         String toastMsg = intent.getStringExtra("TOAST_MSG");
 
         Account account = new Account(
-                sharedPreferences.getString("account_id", "undefined"),
-                sharedPreferences.getString("account_name", "undefined"),
-                sharedPreferences.getString("account_username", "undefined"),
-                sharedPreferences.getString("account_image_url", "undefined"),
-                sharedPreferences.getString("account_email", "undefined")
+                sharedPreferences.getString("account_id", Objects.requireNonNull(session.get("account_id")).toString()),
+                sharedPreferences.getString("account_name", Objects.requireNonNull(session.get("account_name")).toString()),
+                sharedPreferences.getString("account_username", Objects.requireNonNull(session.get("account_username")).toString()),
+                sharedPreferences.getString("account_email", Objects.requireNonNull(session.get("account_email")).toString())
         );
 
         accountViewModel.setAccount(account);
@@ -60,23 +57,23 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+//        BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        NavController navController = Navigation
-                .findNavController(this, R.id.nav_host_fragment_activity_main2);
+//        NavController navController = Navigation
+//                .findNavController(this, R.id.nav_host_fragment_activity_main2);
 
-        NavigationUI.setupWithNavController(navView, navController);
+//        NavigationUI.setupWithNavController(navView, navController);
 
-        navView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                // This method will be called once the layout has been populated, and you can obtain its height.
-                int height = navView.getHeight();
-
-                // Remove the listener to avoid multiple calls
-                navView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-        });
+//        navView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                // This method will be called once the layout has been populated, and you can obtain its height.
+//                int height = navView.getHeight();
+//
+//                // Remove the listener to avoid multiple calls
+//                navView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+//            }
+//        });
 
     }
     public static void deleteCache(Context context) {
